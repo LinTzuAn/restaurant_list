@@ -28,7 +28,7 @@
 
 1. 打開你的終端機，clone 此專案至本機電腦
 ```
-git clone
+git clone https://github.com/LinTzuAn/restaurant_list.git
 ```
 
 2. 進入專案資料夾
