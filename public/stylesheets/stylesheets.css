@@ -10,6 +10,11 @@ header {
   color: #226089;
 }
 
+.badge {
+  border-radius: 0.9rem;
+  background-color: #ff0000;
+}
+
 .banner {
   position: relative;
   z-index: -1;
@@ -62,6 +67,10 @@ header {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+a {
+  text-decoration: none;
 }
 
 .restaurant-category {
