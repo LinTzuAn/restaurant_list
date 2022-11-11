@@ -3,6 +3,7 @@ const exphbs = require('express-handlebars')
 const port = 3000
 const mongoose = require('mongoose')
 const app = express()
+const Restaurant = require('./models/restaurant')
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
@@ -21,19 +22,21 @@ db.once('open', () => {
 
 const restaurantList = require('./restaurant.json')
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
-app.set('view engine', 'handlebars')
+app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.set('view engine', 'hbs')
 
 
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: restaurantList.results })
+  Restaurant.find()
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.error(error))
 })
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  console.log('你輸入:', keyword ==='')
   function findRestaurant (item) {
     if (item.name.toLowerCase().includes(keyword.toLowerCase())) {
       return item
