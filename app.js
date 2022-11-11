@@ -16,11 +16,12 @@ app.use(express.static('public'))
 
 // routes setting
 app.get('/', (req, res) => {
-  res.render('index', { restaurant: restaurantList.results })
+  res.render('index', { restaurants: restaurantList.results })
 })
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
+  console.log('你輸入:', keyword ==='')
   function findRestaurant (item) {
     if (item.name.toLowerCase().includes(keyword.toLowerCase())) {
       return item
@@ -29,8 +30,8 @@ app.get('/search', (req, res) => {
   }
 
   const filteredRestaurant = restaurantList.results.filter(findRestaurant)
-
-  res.render('index', { restaurant: filteredRestaurant, keyword: keyword })
+  console.log(restaurantList.results[0].name.includes(''))
+  res.render('index', { restaurants: filteredRestaurant, keyword: keyword })
 })
 
 app.get('/restaurants/:restaurant_id', (req, res) => {

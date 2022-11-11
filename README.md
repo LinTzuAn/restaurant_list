@@ -49,6 +49,7 @@ npm run dev
 終端機顯示 `Express is running on localhost:3000` 即啟動完成，至[http://localhost:3000](http://localhost:3000)即可開始使用。
 
 ## 使用工具
-- [Visual Studio Code](https://visualstudio.microsoft.com/zh-hant/) - 開發環境
-- [Express](https://www.npmjs.com/package/express) - 應用程式架構
-- [Express-Handlebars](https://www.npmjs.com/package/express-handlebars) - 模板引擎
+- Visual Studio Code 
+- Node 14.16.0
+- express 4.18.3
+- express-handlebars 3.0.0
