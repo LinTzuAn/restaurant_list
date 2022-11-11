@@ -50,6 +50,14 @@ header {
   color: white;
 }
 
+.btn-delete {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  padding: 6px 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
 .form-control:focus {
   box-shadow: none;
   border-color: #ced4da;
