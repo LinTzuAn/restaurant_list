@@ -25,7 +25,6 @@ const restaurantList = require('./restaurant.json')
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
-
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
@@ -49,11 +48,12 @@ app.get('/search', (req, res) => {
   res.render('index', { restaurants: filteredRestaurant, keyword: keyword })
 })
 
-app.get('/restaurants/:restaurant_id', (req, res) => {
-  const filteredRestaurant = restaurantList.results.find(
-    item => item.id.toString() === req.params.restaurant_id
-  )
-  res.render('show', { restaurant: filteredRestaurant })
+app.get('/restaurants/:id', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('detail', { restaurant }))
+    .catch(error => console.log(error))
 })
 
 app.listen(port, () => {
