@@ -1,5 +1,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const bodyParser = require('body-parser')
 const port = 3000
 const mongoose = require('mongoose')
 const app = express()
@@ -26,6 +27,7 @@ app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   Restaurant.find()
@@ -54,6 +56,30 @@ app.get('/restaurants/:id', (req, res) => {
     .lean()
     .then((restaurant) => res.render('detail', { restaurant }))
     .catch(error => console.log(error))
+})
+
+app.get('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('edit', { restaurant }))
+    .catch(error => console.log(error))
+})
+
+app.post('/restaurants/:id/edit', (req, res) => {
+  const id = req.params.id
+  const arrOfKeys = Object.keys(req.body)
+  const arrOfValues = Object.values(req.body)
+  
+  return Restaurant.findById(id)
+  .then(restaurant => {
+    for(let i = 0; i < arrOfKeys.length; i++) {
+      restaurant[arrOfKeys[i]] = arrOfValues[i]
+    }
+    return restaurant.save()
+  })
+  .then( () => res.redirect(`/restaurants/${id}`))
+  .catch(error => console.log(error))
 })
 
 app.listen(port, () => {
