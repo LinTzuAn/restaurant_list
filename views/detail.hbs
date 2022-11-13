@@ -1,7 +1,14 @@
 
 <h1 class="mb-1 restaurant-show-title">{{restaurant.name}}</h1>
-<a href="/">back</a>
-<a href="/restaurants/{{restaurant._id}}/edit">Edit</a>
+
+<div class="d-flex justify-content-start align-items-center">
+  <a class="mx-2" href="/">back</a>
+  <a class="mx-3" href="/restaurants/{{restaurant._id}}/edit">Edit</a>
+  <form action="/restaurants/{{restaurant._id}}/delete" method="POST">
+    <button class="btn-delete text-secondary">delete</button>
+  </form>
+</div>
+
 <div class="container">
   
   <div class="row">
@@ -28,7 +35,7 @@
 
       <p class="mb-1">
         <span class="text-secondary">
-          <i class="fas fa-mobile-alt pr-2"></i>
+          <i class="fa-solid fa-phone"></i>
           電話：
         </span>
         {{restaurant.phone}}

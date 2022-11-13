@@ -1,8 +1,10 @@
 
-
 <form action="/restaurants/{{restaurant._id}}/edit" method="POST">
-  <a href="/">back</a>
-  <button type="submit">Save</button>
+  <div class="d-flex justify-content-start align-items-center">
+    <a class="mx-2" href="/">back</a>
+    <button class="btn-delete text-secondary" type="submit">Save</button>
+  </div>  
+
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-10 mx-auto">
@@ -36,7 +38,7 @@
 
         <p class="mb-1">
           <label for="phone" class="text-secondary">
-            <i class="fas fa-mobile-alt pr-2"></i>
+            <i class="fa-solid fa-phone"></i>
             電話：
           </label>
           <input type="text" id="phone" placeholder="phone" name="phone" value="{{restaurant.phone}}">
@@ -44,7 +46,7 @@
 
         <p class="mb-1">
           <label for="rating" class="text-secondary">
-            
+            <i class="fa-solid fa-star"></i>
             評分
           </label>
           <input type="text" id="rating" placeholder="rating" name="rating" value="{{restaurant.rating}}">
@@ -53,7 +55,7 @@
         <p class="mb-1">
           <label for="description" class="text-secondary">
             <i class="fa-solid fa-comments"></i>
-            描述：
+            簡介：
           </label>
         </p>  
 
