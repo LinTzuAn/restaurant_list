@@ -21,11 +21,9 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
-const restaurantList = require('./restaurant.json')
 
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
-
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -48,13 +46,23 @@ app.post('/restaurants', (req, res) => {
 })
 
 app.get('/search', (req, res) => {
-  const keyword = req.query.keyword
-  function findRestaurant (item) {
-    if (item.name.toLowerCase().includes(keyword.toLowerCase())) {
-      return item
-    } 
-    return item.category.toLowerCase().includes(keyword.toLowerCase())
+  if (!req.query.keyword) {
+    res.redirect("/")
   }
+  
+  const keyword = req.query.keyword.trim().toLowerCase().replace(/ /g, '')
+
+  Restaurant.find()
+  .lean()
+  .then(
+    restaurants => {
+      const filteredRestaurant = restaurants.filter(
+        item => item.name.toLowerCase().includes(keyword) ||
+        item.category.includes(keyword)
+      )
+      res.render('search', {restaurants: filteredRestaurant, keyword})
+    })
+  .catch(error => console.log(error))
 })
 
 app.get('/restaurants/:id', (req, res) => {
