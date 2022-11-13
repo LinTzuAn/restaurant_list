@@ -36,6 +36,17 @@ app.get('/', (req, res) => {
     .catch(error => console.error(error))
 })
 
+app.get('/restaurants/new', (req, res) => {
+  res.render('new')
+})
+
+app.post('/restaurants', (req, res) => {
+  const newRestaurant = req.body
+  return Restaurant.create( newRestaurant )
+    .then(() => res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
   function findRestaurant (item) {
@@ -44,10 +55,6 @@ app.get('/search', (req, res) => {
     } 
     return item.category.toLowerCase().includes(keyword.toLowerCase())
   }
-
-  const filteredRestaurant = restaurantList.results.filter(findRestaurant)
-  console.log(restaurantList.results[0].name.includes(''))
-  res.render('index', { restaurants: filteredRestaurant, keyword: keyword })
 })
 
 app.get('/restaurants/:id', (req, res) => {

@@ -1,0 +1,75 @@
+<form action="/restaurants" method="POST">
+  <div class="d-flex justify-content-start align-items-center">
+    <a class="mx-2" href="/">back</a>
+    <button class="btn-delete text-secondary" type="submit">Create</button>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-10 mx-auto">
+
+        <p class="mb-1">
+          <label for="name" class="text-secondary">
+            <i class="fa-solid fa-pen"></i>
+            名稱：
+          </label>
+          <input type="text" id="name" placeholder="name" name="name">
+        </p>
+
+        <p class="mb-1">
+          <label for="category" class="text-secondary">
+            <i class="fa-solid fa-utensils"></i>
+            類別：
+          </label>
+          <input type="text" id="category" placeholder="category" name="category">
+        </p>
+
+        <p class="mb-1">
+          <label for="location" class="text-secondary">
+            <i class="fas fa-map-marker-alt pr-2"></i>
+            地址：
+          </label>
+          <input type="text" id="location" placeholder="location" name="location">
+          <i class="fas fa-location-arrow pr-2 fa-xs"></i>
+          <input type="text" id="google_map" placeholder="google_map" name="google_map">
+        </p>
+
+        <p class="mb-1">
+          <label for="phone" class="text-secondary">
+            <i class="fa-solid fa-phone"></i>
+            電話：
+          </label>
+          <input type="text" id="phone" placeholder="phone" name="phone">
+        </p>
+
+        <p class="mb-1">
+          <label for="rating" class="text-secondary">
+            <i class="fa-solid fa-star"></i>
+            評分：
+          </label>
+          <input type="text" id="rating" placeholder="rating" name="rating">
+        </p>
+
+        <p class="mb-1">
+          <label for="description" class="text-secondary">
+            <i class="fa-solid fa-comments"></i>
+            簡介：
+          </label>
+        </p>
+
+        <p class="mb-5">
+          <textarea class="" id="description" rows="3" name="description"></textarea>
+        </p>
+
+        <p class="mb-1">
+          <label for="image" class="text-secondary">
+            圖片：
+          </label>
+          <input type="text" id="image" placeholder="image" name="image">
+        </p>
+    
+      </div>
+
+    </div>
+  </div>
+</form>
