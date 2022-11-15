@@ -2,6 +2,12 @@
 這是一個可供使用者儲存喜愛餐廳的網站
 
 ## 功能描述
+- 使用者可以新增餐廳資料
+
+- 使用者可以修改餐廳資料
+
+- 使用者可以刪除餐廳資料
+
 - 使用者可以在首頁看到所有餐廳與它們的簡單資料：
   - 餐廳照片
   - 餐廳名稱
@@ -41,7 +47,12 @@ cd restaurant_list
 npm install
 ```
 
-4. 執行
+4. 安裝seed
+```
+npm run seed
+```
+
+5. 執行
 ```
 npm run dev
 ```
@@ -53,3 +64,5 @@ npm run dev
 - Node 14.16.0
 - express 4.18.3
 - express-handlebars 3.0.0
+- mongodb
+- mongoose 5.9.7
