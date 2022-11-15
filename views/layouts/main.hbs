@@ -14,7 +14,7 @@
 
   <header>
     <!-- navigation -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light fixed-top">
       <div class="container">
         <a class="navbar-brand" href="/">
           <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png"
@@ -30,6 +30,16 @@
   {{{body}}} 
   <script src="/javascripts/popper.js"></script>
   <script src="/javascripts/bootstrap.js"></script>
-
+  <script>
+    function confirmDelete () {
+      const result = confirm('確定刪除？')
+      if (result) {
+        alter('已刪除')
+        return true
+      } else {
+        return false
+      }
+    }
+  </script>
 </body>
 </html>

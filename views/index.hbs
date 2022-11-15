@@ -22,6 +22,17 @@
     <div class="col-md-10 col-12 mx-auto">
       <div class="row row-cols-sm-3">
         
+         <div class="mb-5">
+          <a href="/restaurants/new" class="text-secondary">
+            <div class="card">
+              <img class="card-img-top" src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg" alt="add restaurant">
+              <div class="card-body p-3">
+                <h6 class="card-title mb-1">新增餐廳</h6>
+              </div>
+            </div>
+          </a>
+        </div>
+
         {{#each restaurants}}
         <div class="mb-5">
           <a href="/restaurants/{{this._id}}" class="text-secondary">
@@ -47,23 +58,12 @@
             <a href="/restaurants/{{this._id}}/edit" class="mx-2">Edit</a>
             <a href="/restaurants/{{this._id}}" class="mx-3">Detail</a>
             <form action="/restaurants/{{this._id}}/delete" method="POST">
-              <button class="btn-delete text-secondary">delete</button>
+              <button class="btn-delete text-secondary" onclick="return confirmDelete()">delete</button>
             </form>  
           </div>
         </div> 
         {{/each}}
 
-        <div class="mb-5">
-          <a href="/restaurants/new" class="text-secondary">
-            <div class="card">
-              <img class="card-img-top" src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5720/restaurants-list-cover.jpg" alt="add restaurant">
-              <div class="card-body p-3">
-                <h6 class="card-title mb-1">新增餐廳</h6>
-              </div>
-            </div>
-          </a>
-        </div>
-        
       </div>
     </div>
   </div>
