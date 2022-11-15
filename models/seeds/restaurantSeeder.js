@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const restaurant = require('../restaurant')
-const restaurantJson = require('/Users/a22341254/restaurant_list/restaurant')
+const restaurantJson = require('./restaurant.json')
 
 require('dotenv').config()
 
