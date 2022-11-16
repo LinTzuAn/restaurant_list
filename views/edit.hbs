@@ -1,5 +1,5 @@
 
-<form action="/restaurants/{{restaurant._id}}/edit" method="POST">
+<form action="/restaurants/{{restaurant._id}}?_method=PUT" method="POST">
   <div class="d-flex justify-content-start align-items-center">
     <a class="mx-2" href="/">back</a>
     <button class="btn-delete text-secondary" type="submit">Save</button>
@@ -31,9 +31,8 @@
             地址：
           </label>
           <input type="text" id="location" placeholder="location" name="location" value="{{restaurant.location}}">        
-          <a href="{{restaurant.google_map}}" class="text-secondary" target="_blank">
-            <i class="fas fa-location-arrow pr-2 fa-xs"></i>
-          </a>
+          <i class="fas fa-location-arrow pr-2 fa-xs"></i>
+          <input type="text" id="google_map" placeholder="google_map" name="google_map" value="{{restaurant.google_map}}">
         </p>
 
         <p class="mb-1">

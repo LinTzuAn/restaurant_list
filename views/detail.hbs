@@ -4,7 +4,7 @@
 <div class="d-flex justify-content-start align-items-center">
   <a class="mx-2" href="/">back</a>
   <a class="mx-3" href="/restaurants/{{restaurant._id}}/edit">Edit</a>
-  <form action="/restaurants/{{restaurant._id}}/delete" method="POST">
+  <form action="/restaurants/{{restaurant._id}}?_method=DELETE" method="POST">
     <button class="btn-delete text-secondary">delete</button>
   </form>
 </div>
