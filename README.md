@@ -47,12 +47,17 @@ cd restaurant_list
 npm install
 ```
 
-4. 安裝seed
+4.新增.env檔案，並設置資料庫連線字串
+```
+MONGODB_URL=mongodb+srv://<account>:<password>@cluster0.<xxxxx>.mongodb.net/<table>?retryWrites=true&w=majority
+```
+
+5. 安裝seed
 ```
 npm run seed
 ```
 
-5. 執行
+6. 執行
 ```
 npm run dev
 ```
