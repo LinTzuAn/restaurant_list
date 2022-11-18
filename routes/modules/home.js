@@ -12,12 +12,12 @@ router.get('/', (req, res) => {
     category: { category: 'asc' },
     location: { location: 'asc' }
   }
-  const selected = {[mode]: true}
+  const sortSelected = {[mode]: true}
 
   Restaurant.find()
     .lean()
     .sort(sorting[mode])
-    .then(restaurants => res.render('index', { restaurants, selected }))
+    .then(restaurants => res.render('index', { restaurants, sortSelected }))
     .catch(error => console.error(error))
 })
 
