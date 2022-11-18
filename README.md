@@ -25,6 +25,8 @@
 
 - 使用者可以透過搜尋餐廳類別來找到特定的餐廳
 
+- 使用者可以選擇讓餐廳依照名稱、類別、或地區排序
+
 ## 環境建置與需求
 - express @4.18.2
 - express-handlebars @3.0.0
@@ -47,7 +49,7 @@ cd restaurant_list
 npm install
 ```
 
-4.新增.env檔案，並設置資料庫連線字串
+4. 新增.env檔案，並設置資料庫連線字串
 ```
 MONGODB_URL=mongodb+srv://<account>:<password>@cluster0.<xxxxx>.mongodb.net/<table>?retryWrites=true&w=majority
 ```
