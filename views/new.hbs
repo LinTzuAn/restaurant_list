@@ -6,79 +6,75 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 mx-auto">
+      <div class="col-md-6 mx-auto">
 
-        <p class="mb-1">
-          <label for="name" class="text-secondary">
+        <div class=" mb-4">
+          <label for="name" class="form-label text-secondary">
             <i class="fa-solid fa-pen"></i>
-            名稱：
+            名稱
           </label>
-          <input type="text" id="name" placeholder="name" name="name">
-        </p>
+          <input type="text" class="form-control" id="name" placeholder="請輸入名稱" name="name">
+        </div>
 
-        <p class="mb-1">
-          <label for="category" class="text-secondary">
+        <div class=" mb-4">
+          <label for="category" class="form-label text-secondary">
             <i class="fa-solid fa-utensils"></i>
             類別：
           </label>
-          <input list="category" class="form-control" name="category" id="category" placeholder="category">
-          <datalist id="category">
-            <option>義式料理</option>
-            <option>美式料理</option>
-            <option>日本料理</option>
-            <option>中東料理</option>
-            <option>咖啡廳</option>
-            <option>早午餐店</option>
+          <input class="form-control" list="datalistOptions" id="category" placeholder="請選擇類別" name="category">
+          <datalist id="datalistOptions">
+            <option value="義式料理">
+            <option value="美式料理">
+            <option value="日本料理">
+            <option value="早午餐">
+            <option value="咖啡廳">
           </datalist>
-
-        </p>
-
-        <p class="mb-1">
-          <label for="location" class="text-secondary">
+        </div>
+        
+          <label for="location" class="form-label text-secondary">
             <i class="fas fa-map-marker-alt pr-2"></i>
             地址：
           </label>
-          <input type="text" id="location" placeholder="location" name="location">
-          <i class="fas fa-location-arrow pr-2 fa-xs"></i>
-          <input type="text" id="google_map" placeholder="google_map" name="google_map">
-        </p>
+        <div class="input-group mb-4">  
+          <input type="text" class="form-control" id="location" placeholder="請輸入地址" name="location">
+            <span class="input-group-text">
+              <i class="fas fa-location-arrow pr-2 fa-xs"></i>  
+            </span>  
+          <input type="text" class="form-control" id="google_map" placeholder="google地圖" name="google_map">
+        </div>
 
-        <p class="mb-1">
-          <label for="phone" class="text-secondary">
+        <div class="mb-4">
+          <label for="phone" class=" form-label text-secondary">
             <i class="fa-solid fa-phone"></i>
             電話：
           </label>
-          <input type="text" id="phone" placeholder="phone" name="phone">
-        </p>
+          <input type="text" class="form-control" id="phone" placeholder="請輸入電話" name="phone">
+        </div>
 
-        <p class="mb-1">
-          <label for="rating" class="text-secondary">
+        <div class="mb-4">
+          <label for="rating" class="form-label text-secondary">
             <i class="fa-solid fa-star"></i>
             評分：
           </label>
-          <input type="text" id="rating" placeholder="rating" name="rating">
-        </p>
+          <input type="text" class="form-control" id="rating" placeholder="評分" name="rating">
+        </div>
 
-        <p class="mb-1">
-          <label for="description" class="text-secondary">
+        <div class="mb-4">
+          <label for="description" class="form-label text-secondary">
             <i class="fa-solid fa-comments"></i>
             簡介：
           </label>
-        </p>
+          <textarea class="form-control" id="description" rows="3" name="description">...</textarea>
+        </div>
 
-        <p class="mb-5">
-          <textarea class="" id="description" rows="3" name="description"></textarea>
-        </p>
-
-        <p class="mb-1">
-          <label for="image" class="text-secondary">
+        <div class="mb-4">
+          <label for="image" class="form-label text-secondary">
             圖片：
           </label>
-          <input type="text" id="image" placeholder="image" name="image">
-        </p>
+          <input type="text" class="form-control" id="image" placeholder="請輸入圖片網址" name="image">
+        </div>
     
       </div>
-
     </div>
   </div>
 </form>

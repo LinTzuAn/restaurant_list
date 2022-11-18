@@ -10,6 +10,10 @@ header {
   color: #226089;
 }
 
+.btn-outline {
+  color: #4592af;
+}
+
 .badge {
   border-radius: 0.9rem;
   background-color: #d40000;
@@ -43,6 +47,10 @@ header {
 .form-control::placeholder {
   color: #aaaaaa;
   font-size: 0.8rem;
+}
+
+.form-select {
+  color: #666666;
 }
 
 .btn-major {
@@ -82,6 +90,11 @@ a {
 }
 
 .restaurant-category {
+  color: #666666;
+  font-size: 0.8rem;
+}
+
+.restaurant-location {
   color: #666666;
   font-size: 0.8rem;
 }
