@@ -17,7 +17,10 @@
 
 <div class="container mt-5">
   {{#if keyword}}
-    <div class="col-10 mx-auto mb-3 d-flex justify-content-end">
+    <div class="col-10 mx-auto mb-3 d-flex justify-content-between">
+      <a href="/restaurants/new" class="text-secondary">
+        <button class="btn btn-outline-primary">新增餐廳</button>
+      </a>
       <form action="/search">
       <input type="hidden" name="keyword" value="{{keyword}}" >
         <select class="form-select" name="sorting" id="sorting" onchange="this.form.submit()">
@@ -32,7 +35,10 @@
   {{/if}}
 
   {{#unless keyword}}
-    <div class="col-10 mx-auto mb-3 d-flex justify-content-end">
+    <div class="col-10 mx-auto mb-3 d-flex justify-content-between">
+      <a href="/restaurants/new" class="text-secondary">
+        <button class="btn btn-outline-primary">新增餐廳</button>
+      </a>
       <form action="/">
         <select class="form-select" name="sorting" id="sorting" onchange="this.form.submit()">
           <option {{#if sortSelected.default}} selected {{/if}} value="default">預設排序</option>
