@@ -19,7 +19,7 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register', (req, res) => {
-  // get user registration info 
+  // get user registration info
   const { email, name, password, confirmPassword } = req.body
   // check info
   const errors = []
@@ -38,33 +38,33 @@ router.post('/register', (req, res) => {
       confirmPassword
     })
   }
-  // check whether user has already register 
+  // check whether user has already register
   User.findOne({ email })
-  .then(user => {
+    .then(user => {
     // if true, return to previous page else save user info
-    if (user) {
-      errors.push({ message: 'This email address has been taken.' })
-      res.render('register', {
-        email,
-        name,
-        password,
-        confirmPassword,
-        errors
-      })
-    } else {
-      return bcrypt
-        .genSalt(10)
-        .then(salt => bcrypt.hash(password, salt))
-        .then(hash => User.create({
+      if (user) {
+        errors.push({ message: 'This email address has been taken.' })
+        res.render('register', {
           email,
           name,
-          password: hash
-        }))
-        .then(() => res.redirect('/'))
-        .catch(err => console.log(err))
-    }
-  })
-  .catch(err => console.log(err))
+          password,
+          confirmPassword,
+          errors
+        })
+      } else {
+        return bcrypt
+          .genSalt(10)
+          .then(salt => bcrypt.hash(password, salt))
+          .then(hash => User.create({
+            email,
+            name,
+            password: hash
+          }))
+          .then(() => res.redirect('/'))
+          .catch(err => console.log(err))
+      }
+    })
+    .catch(err => console.log(err))
 })
 
 router.get('/logout', (req, res) => {

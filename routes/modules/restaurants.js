@@ -3,7 +3,6 @@ const router = express.Router()
 
 const Restaurant = require('../../models/restaurant')
 
-
 router.get('/new', (req, res) => {
   res.render('new')
 })
@@ -18,7 +17,7 @@ router.post('/', (req, res) => {
 router.get('/search', (req, res) => {
   const userId = req.user._id
   if (!req.query.keyword) {
-    res.redirect("/")
+    res.redirect('/')
   }
 
   const keyword = req.query.keyword.trim().toLowerCase().replace(/ /g, '')

@@ -7,13 +7,13 @@ router.get('/', (req, res) => {
   const userId = req.user._id
   const mode = req.query.sorting
   const sorting = {
-    default: {_id: 'asc'},
+    default: { _id: 'asc' },
     AtoZ: { name: 'asc' },
     ZtoA: { name: 'desc' },
     category: { category: 'asc' },
     location: { location: 'asc' }
   }
-  const sortSelected = {[mode]: true}
+  const sortSelected = { [mode]: true }
 
   Restaurant.find({ userId })
     .lean()

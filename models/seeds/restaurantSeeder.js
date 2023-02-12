@@ -21,18 +21,18 @@ const SEED_USER = [
     password: '12345678',
     restaurantIndex: [3, 4, 5]
   }
-]    
+]
 
 db.once('open', () => {
-  Promise.all(Array.from({ length: 2 }, (_,i) => bcrypt
-      .genSalt(10)
-      .then(salt => bcrypt.hash(SEED_USER[i].password, salt))
-      .then(hash =>
-          User.create({
-          name: SEED_USER[i].name,
-          email: SEED_USER[i].email,
-          password: hash,
-        })
+  Promise.all(Array.from({ length: 2 }, (_, i) => bcrypt
+    .genSalt(10)
+    .then(salt => bcrypt.hash(SEED_USER[i].password, salt))
+    .then(hash =>
+      User.create({
+        name: SEED_USER[i].name,
+        email: SEED_USER[i].email,
+        password: hash
+      })
         .then(user => {
           const restaurants = SEED_USER[i].restaurantIndex.map(index => {
             const restaurant = restData[index]
@@ -44,9 +44,8 @@ db.once('open', () => {
         .catch(error => console.log(error))
     ))
   )
-  .then(() => {
-    console.log('done.')
-    process.exit()
-   })
+    .then(() => {
+      console.log('done.')
+      process.exit()
+    })
 })
-

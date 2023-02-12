@@ -15,9 +15,9 @@ router.get('/', (req, res) => {
     location: { location: 'asc' }
   }
   const sortSelected = { [mode]: true }
-  
+
   if (!req.query.keyword) {
-    return res.redirect("/")
+    return res.redirect('/')
   }
 
   Restaurant.find({ userId })
