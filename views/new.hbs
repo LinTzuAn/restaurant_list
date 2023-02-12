@@ -1,9 +1,5 @@
 <form action="/restaurants" method="POST">
-  <div class="d-flex justify-content-start align-items-center">
-    <a class="mx-2" href="/">back</a>
-    <button class="btn-delete text-secondary" type="submit">Create</button>
-  </div>
-
+<a class="mx-2" href="/">back</a>
   <div class="container">
     <div class="row">
       <div class="col-md-6 mx-auto">
@@ -13,7 +9,7 @@
             <i class="fa-solid fa-pen"></i>
             名稱
           </label>
-          <input type="text" class="form-control" id="name" placeholder="請輸入名稱" name="name">
+          <input type="text" class="form-control" id="name" placeholder="請輸入名稱" name="name" maxlength="50">
         </div>
 
         <div class=" mb-4">
@@ -21,7 +17,7 @@
             <i class="fa-solid fa-utensils"></i>
             類別：
           </label>
-          <input class="form-control" list="datalistOptions" id="category" placeholder="請選擇類別" name="category">
+          <input class="form-control" list="datalistOptions" id="category" placeholder="請選擇類別" name="category" maxlength="10">
           <datalist id="datalistOptions">
             <option value="義式料理">
             <option value="美式料理">
@@ -40,7 +36,7 @@
             <span class="input-group-text">
               <i class="fas fa-location-arrow pr-2 fa-xs"></i>  
             </span>  
-          <input type="text" class="form-control" id="google_map" placeholder="google地圖" name="google_map">
+          <input type="text" class="form-control" id="google_map" placeholder="google地圖" name="google_map" maxlength="30">
         </div>
 
         <div class="mb-4">
@@ -48,7 +44,7 @@
             <i class="fa-solid fa-phone"></i>
             電話：
           </label>
-          <input type="text" class="form-control" id="phone" placeholder="請輸入電話" name="phone">
+          <input type="text" class="form-control" id="phone" placeholder="請輸入電話" name="phone" maxlength="12">
         </div>
 
         <div class="mb-4">
@@ -56,7 +52,7 @@
             <i class="fa-solid fa-star"></i>
             評分：
           </label>
-          <input type="text" class="form-control" id="rating" placeholder="評分" name="rating">
+          <input type="number" class="form-control" id="rating" placeholder="評分" name="rating" max="5">
         </div>
 
         <div class="mb-4">
@@ -64,17 +60,20 @@
             <i class="fa-solid fa-comments"></i>
             簡介：
           </label>
-          <textarea class="form-control" id="description" rows="3" name="description">...</textarea>
+          <textarea class="form-control" id="description" rows="3" name="description" maxlength="200">...</textarea>
         </div>
 
         <div class="mb-4">
           <label for="image" class="form-label text-secondary">
             圖片：
           </label>
-          <input type="text" class="form-control" id="image" placeholder="請輸入圖片網址" name="image">
+          <input type="url" class="form-control" id="image" placeholder="請輸入圖片網址" name="image">
         </div>
     
       </div>
     </div>
+  </div>
+  <div class="mt-3 mb-5 d-flex justify-content-center align-items-center">
+    <button class="btn-delete text-secondary" type="submit">Create</button>
   </div>
 </form>

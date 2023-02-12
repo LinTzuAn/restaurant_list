@@ -1,72 +1,82 @@
-
 <form action="/restaurants/{{restaurant._id}}?_method=PUT" method="POST">
-  <div class="d-flex justify-content-start align-items-center">
-    <a class="mx-2" href="/">back</a>
-    <button class="btn-delete text-secondary" type="submit">Save</button>
-  </div>  
-
+<a class="mx-2" href="/">back</a>
   <div class="container">
     <div class="row">
-      <div class="col-12 col-md-10 mx-auto">
-
-        <p class="mb-1">
-          <label for="name" class="text-secondary">
+      <div class="col-md-6 mx-auto">
+  
+        <div class=" mb-4">
+          <label for="name" class="form-label text-secondary">
             <i class="fa-solid fa-pen"></i>
-            名稱：
+            名稱
           </label>
-          <input type="text" id="name" placeholder="name" name="name" value="{{restaurant.name}}">
-        </p>
-
-        <p class="mb-1">
-          <label for="category" class="text-secondary">
+          <input type="text" class="form-control" id="name" name="name" maxlength="50" value="{{restaurant.name}}">
+        </div>
+  
+        <div class=" mb-4">
+          <label for="category" class="form-label text-secondary">
             <i class="fa-solid fa-utensils"></i>
             類別：
           </label>
-          <input type="text" id="category" placeholder="category" name="category" value="{{restaurant.category}}">   
-        </p>
-
-        <p class="mb-1">
-          <label for="location" class="text-secondary">
-            <i class="fas fa-map-marker-alt pr-2"></i>
-            地址：
-          </label>
-          <input type="text" id="location" placeholder="location" name="location" value="{{restaurant.location}}">        
-          <i class="fas fa-location-arrow pr-2 fa-xs"></i>
-          <input type="text" id="google_map" placeholder="google_map" name="google_map" value="{{restaurant.google_map}}">
-        </p>
-
-        <p class="mb-1">
-          <label for="phone" class="text-secondary">
+          <input class="form-control" list="datalistOptions" id="category" name="category"
+            maxlength="10" value="{{restaurant.category}}">
+          <datalist id="datalistOptions">
+            <option value="義式料理">
+            <option value="美式料理">
+            <option value="日本料理">
+            <option value="早午餐">
+            <option value="咖啡廳">
+          </datalist>
+        </div>
+  
+        <label for="location" class="form-label text-secondary">
+          <i class="fas fa-map-marker-alt pr-2"></i>
+          地址：
+        </label>
+        <div class="input-group mb-4">
+          <input type="text" class="form-control" id="location"  name="location" maxlength="50" value="{{restaurant.location}}">
+          <span class="input-group-text">
+            <i class="fas fa-location-arrow pr-2 fa-xs"></i>
+          </span>
+          <input type="text" class="form-control" id="google_map"  name="google_map" value="{{restaurant.google_map}}">
+        </div>
+  
+        <div class="mb-4">
+          <label for="phone" class=" form-label text-secondary">
             <i class="fa-solid fa-phone"></i>
             電話：
           </label>
-          <input type="text" id="phone" placeholder="phone" name="phone" value="{{restaurant.phone}}">
-        </p>
-
-        <p class="mb-1">
-          <label for="rating" class="text-secondary">
+          <input type="text" class="form-control" id="phone"  name="phone" maxlength="12" value="{{restaurant.phone}}">
+        </div>
+  
+        <div class="mb-4">
+          <label for="rating" class="form-label text-secondary">
             <i class="fa-solid fa-star"></i>
-            評分
+            評分：
           </label>
-          <input type="text" id="rating" placeholder="rating" name="rating" value="{{restaurant.rating}}">
-        </p>
-
-        <p class="mb-1">
-          <label for="description" class="text-secondary">
+          <input type="number" class="form-control" id="rating" name="rating" max="5" value="{{restaurant.rating}}">
+        </div>
+  
+        <div class="mb-4">
+          <label for="description" class="form-label text-secondary">
             <i class="fa-solid fa-comments"></i>
             簡介：
           </label>
-        </p>  
-
-        <p class="mb-5">
-          <textarea class="" id="description" rows="3" name="description">{{restaurant.description}}
-          </textarea>
-        </p>
-        
+          <textarea class="form-control" id="description" rows="3" name="description" maxlength="200">{{restaurant.description}}</textarea>
+        </div>
+  
+        <div class="mb-4">
+          <label for="image" class="form-label text-secondary">
+            圖片：
+          </label>
+          <input type="url" class="form-control" id="image" name="image" value="{{restaurant.image}}">
+        </div>
         <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
           style="max-width: 600px;">
+  
       </div>
-    
-    </div>  
+    </div>
   </div>
+  <div class="mt-3 mb-5 d-flex justify-content-center align-items-center">
+    <button class="btn-delete text-secondary" type="submit">Save</button>
+  </div>  
 </form>

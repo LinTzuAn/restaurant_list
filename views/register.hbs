@@ -1,4 +1,4 @@
-<div class="row mt-5">
+<div class="row mt-5 mb-5">
   <div class="col-md-4 m-auto">
     <div class="card card-body">
       <h1 class="text-center mt-3">Register</h1>
@@ -6,7 +6,7 @@
       <form action="/users/register" method="POST">
         <div class="mb-3">
           <label for="name" class="mb-2">Name</label>
-          <input type="name" id="name" name="name" class="form-control" placeholder="Name" value="{{name}}">
+          <input type="name" id="name" name="name" class="form-control" placeholder="Name" value="{{name}}" maxlength="20">
         </div>
         <div class="mb-3">
           <label for="email" class="mb-2">Email</label>
@@ -15,7 +15,7 @@
         <div class="mb-3">
           <label for="password" class="mb-2">Password</label>
           <input type="password" id="password" name="password" class="form-control" placeholder="Password"
-            value="{{password}}">
+            value="{{password}}" maxlength="20">
         </div>
         <div class="mb-3">
           <label for="confirmPassword" class="mb-2">Confirm password</label>
