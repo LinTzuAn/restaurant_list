@@ -2,6 +2,10 @@
 這是一個可供使用者儲存喜愛餐廳的網站
 
 ## 功能描述
+- 使用者可以註冊會員並重新登入使用餐廳清單
+
+- 使用者可以登入會員使用餐廳清單
+
 - 使用者可以新增餐廳資料
 
 - 使用者可以修改餐廳資料
@@ -49,10 +53,7 @@ cd restaurant_list
 npm install
 ```
 
-4. 新增.env檔案，並設置資料庫連線字串
-```
-MONGODB_URL=mongodb+srv://<account>:<password>@cluster0.<xxxxx>.mongodb.net/<table>?retryWrites=true&w=majority
-```
+4. 新增.env檔案，並根據.env.example檔案內資訊設置環境變數
 
 5. 安裝seed
 ```
