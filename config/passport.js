@@ -2,7 +2,7 @@ const passport = require('passport')
 const bcrypt = require('bcryptjs')
 const LocalStrategy = require('passport-local').Strategy
 const FacebookStrategy = require('passport-facebook').Strategy
-const User = require('../models/users')
+const User = require('../models/user')
 
 module.exports = app => {
   app.use(passport.initialize())

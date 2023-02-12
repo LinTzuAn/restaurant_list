@@ -4,6 +4,7 @@ const router = express.Router()
 const Restaurant = require('../../models/restaurant')
 
 router.get('/', (req, res) => {
+  const userId = req.user._id
   const keyword = req.query.keyword.trim().toLowerCase().replace(/ /g, '')
   const mode = req.query.sorting
   const sorting = {
@@ -19,7 +20,7 @@ router.get('/', (req, res) => {
     return res.redirect("/")
   }
 
-  Restaurant.find()
+  Restaurant.find({ userId })
     .lean()
     .sort(sorting[mode])
     .then(
