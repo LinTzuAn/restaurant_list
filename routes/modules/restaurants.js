@@ -56,15 +56,7 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
   const userId = req.user._id
   const _id = req.params.id
-  const arrOfKeys = Object.keys(req.body)
-  const arrOfValues = Object.values(req.body)
-  return Restaurant.findOne({ _id, userId })
-    .then(restaurant => {
-      for (let i = 0; i < arrOfKeys.length; i++) {
-        restaurant[arrOfKeys[i]] = arrOfValues[i]
-      }
-      return restaurant.save()
-    })
+  return Restaurant.findByIdAndUpdate({ _id, userId}, req.body)
     .then(() => res.redirect(`/restaurants/${_id}`))
     .catch(error => console.log(error))
 })
